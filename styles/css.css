@@ -1,0 +1,70 @@
+body {
+  min-height: 100vh;
+  background: linear-gradient(45deg, rgb(203, 146, 146), rgb(146, 146, 225));
+}
+h2 {
+  color: rgb(18, 11, 117);
+  text-align: center;
+}
+p {
+  font-weight: bolder;
+}
+.alert {
+  transition: 0.8s;
+}
+.alert-main {
+  background-color: rgb(206, 196, 196);
+}
+.alert-main:hover {
+  background-color: rgb(146, 146, 225);
+  color: rgb(203, 228, 219);
+}
+.alert-light {
+  background-color: rgb(224, 224, 224);
+}
+.alert-light:hover {
+  background-color: rgb(151, 151, 152);
+  color: rgb(255, 255, 255);
+}
+.buttonContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-top: 1px black solid;
+  padding: 10px;
+}
+.listeUser {
+  font-size: 30px;
+}
+.ListSeparator {
+  border-top: 1px solid black;
+}
+.imageLivre {
+  width: 100px;
+  height: 150px;
+  margin-bottom: 60px;
+}
+.imageLivreDansEdit {
+  width: 200px;
+  height: 250px;
+  align-self: center;
+}
+.imageProfile {
+  width: 100px;
+  height: 100px;
+}
+.contenueLivres {
+  display: flex;
+  flex-direction: row;
+}
+.contenueLivres > img {
+  margin-right: 40px;
+}
+.contenueLivres > div {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+.contenueLivres > div > span {
+  font-weight: bolder;
+}

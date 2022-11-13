@@ -1,0 +1,90 @@
+<div class="row mt-5">
+  <div class="col-md-6 m-auto">
+    <div class="card card-body">
+      <h1 class="text-center mb-3">
+        <%- include('./partiels/iconPartiel.ejs') %> Modifier un compte
+      </h1>
+      <p><%- include('./partiels/messages.ejs') %></p>
+      <form
+        action="/usagers/modify/<%= _id %>/<%= nom %>"
+        method="POST"
+        enctype="multipart/form-data"
+      >
+        <div class="form-group">
+          <label for="nom">Nom</label>
+          <input
+            type="text"
+            name="nom"
+            id="nom"
+            class="form-control"
+            value="<%= typeof nom != 'undefined' ? nom : '' %>"
+            placeholder="Entrez votre nom"
+          />
+        </div>
+        <div class="form-group">
+          <label for="_id">Courriel</label>
+          <input type="email" name="_id" id="_id" class="form-control"
+          value="<%= typeof _id != 'undefined' ? _id : '' %>"
+          placeholder="Entrez un courriel" <%= typeof disable != 'undefined' ?
+          'readonly' : '' %> />
+        </div>
+        <div class="form-group">
+          <label for="oldPass">New Password</label>
+          <input
+            type="password"
+            name="oldPass"
+            id="oldPass"
+            class="form-control"
+            value="<%= typeof oldPass != 'undefined' ? oldPass : '' %>"
+            placeholder="Entrez votre ancient password"
+          />
+        </div>
+        <div class="form-group">
+          <label for="nom">Confirm new Password</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            class="form-control"
+            value="<%= typeof password != 'undefined' ? password : '' %>"
+            placeholder="Entrez votre new password"
+          />
+        </div>
+        <div class="form-group">
+          <h4>Roles:</h4>
+          <label for="roleNormal">Normal</label>
+          <input
+            type="checkbox"
+            name="roleNormal"
+            id="roleNormal"
+            disabled
+            checked
+          />
+          <label for="roleAdmin">Admin</label>
+          <input type="checkbox" name="roleAdmin" id="roleAdmin" <%= typeof
+          roleAdmin != 'undefined' ? 'checked': '' %> />
+          <label for="roleGestion">Gestion</label>
+          <input type="checkbox" name="roleGestion" id="roleGestion" <%= typeof
+          roleGestion != 'undefined' ? 'checked': '' %> /><br />
+        </div>
+        <div>
+          <label for="fichierImage">Televerser une image de profil</label>
+          <input type="file" name="fichierImage" id="fichierImage" required />
+        </div>
+        <button
+          type="submit"
+          class="btn btn-primary btn-block"
+          style="margin-top: 1px"
+        >
+          Modifier le compte
+        </button>
+        <a
+          style="margin-top: 10px"
+          class="btn btn-primary btn-block mb-2"
+          href="/usagers/menu"
+          >Annuler</a
+        >
+      </form>
+    </div>
+  </div>
+</div>

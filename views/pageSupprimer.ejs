@@ -1,0 +1,19 @@
+<div class="row mt-5">
+  <div class="col-md-6 m-auto">
+    <div class="card card-body">
+      <h2>Supprimer un usager</h2>
+      <p>
+        Etes-vous sur de vouloir supprimer l'usager <%= _id %>?.. Cette action
+        est irréversible
+      </p>
+      <p class="col-md-3 m-auto">
+        <a class="btn btn-danger mb-2" href="/usagers/delete/<%= _id %>"
+          >Supprimer</a
+        >
+        <a class="btn btn-primary btn-block mb-2" href="/usagers/menu"
+          >Annuler</a
+        >
+      </p>
+    </div>
+  </div>
+</div>

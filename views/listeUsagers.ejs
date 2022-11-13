@@ -1,0 +1,58 @@
+<h2 class="col-md-6 m-auto" style="padding: 20px">
+  Bonjour <% if(typeof user != 'undefined') { %> <%= user.nom %> <% } %> tu est
+  connecté...
+</h2>
+<div class="col-md-8 m-auto card card-body">
+  <p class="col-md-3 m-auto listeUser">Liste des Usagers</p>
+  <span class="ListSeparator"></span>
+  <p><%- include('./partiels/messages.ejs') %></p>
+  <% if (typeof tousUsagers != 'undefined') { %> <%
+  tousUsagers.forEach(function(user) { %> <% let testAdmin =
+  user.roles.find((role) => role == 'admin') %> <% let testGestion =
+  user.roles.find((role) => role == 'gestion') %> <% let testNormal =
+  user.roles.find((role) => role == 'normal') %> <% let listeRoles = ''%> <% if
+  (testAdmin) { %> <% listeRoles += "admin" %> <% } %> <% if (listeRoles.length
+  > 1) { %> <% listeRoles += ", " %> <% } %> <% if (testGestion) {%> <%
+  listeRoles += "gestion" %> <% } %> <% if (listeRoles.length > 2) { %> <%
+  listeRoles += ", " %> <% } %> <% listeRoles += "normal" %>
+  <div class="alert alert-main alert-dismissible fade show" role="alert">
+    <img
+      src="/images/<%= user.fichierImage %>"
+      alt="ImageDeLusager"
+      class="imageProfile"
+    />
+    <%= user._id %> - <%= user.nom %> - <i>(<%= listeRoles %>)</i>
+    <a
+      class="btn btn-outline-success btn-sm mb-2"
+      href="/usagers/editer/<%= user._id %>/<%= user.nom %>"
+      >Modifier</a
+    >
+    -
+    <a
+      class="btn btn-outline-danger btn-sm mb-2"
+      href="/usagers/supprimer/<%= user._id %>"
+      >Supprimer</a
+    >
+  </div>
+  <% })%> <% } %>
+  <div class="buttonContainer">
+    <p>
+      <a class="btn btn-primary btn-sm" href="/usagers/ajouter"
+        >Ajouter un usager</a
+      >
+    </p>
+    <p>
+      <a class="btn btn-primary btn-sm" style="min-width: 128px" href="/acceuil"
+        >Acceuil</a
+      >
+    </p>
+    <p>
+      <a
+        class="btn btn-primary btn-sm"
+        style="min-width: 128px"
+        href="/usagers/logout"
+        >Deconnection</a
+      >
+    </p>
+  </div>
+</div>

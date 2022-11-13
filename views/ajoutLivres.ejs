@@ -1,0 +1,112 @@
+<div class="row mt-5">
+  <div class="col-md-6 m-auto">
+    <div class="card card-body">
+      <h1 class="text-center mb-3">
+        <%- include('./partiels/iconPartiel.ejs') %> Ajouter un nouveau livre
+      </h1>
+      <p><%- include('./partiels/messages.ejs') %></p>
+      <form action="/livres/register" method="POST">
+        <div class="form-group">
+          <label for="password">Titre</label>
+          <input
+            type="text"
+            name="titre"
+            id="titre"
+            class="form-control"
+            value="<%= typeof titre != 'undefined' ? titre : '' %>"
+            placeholder="Entez un titre"
+          />
+        </div>
+        <div class="form-group">
+          <label for="password">Auteur</label>
+          <input
+            type="text"
+            name="auteur"
+            id="auteur"
+            class="form-control"
+            value="<%= typeof auteur != 'undefined' ? auteur : '' %>"
+            placeholder="Entez un auteur"
+          />
+        </div>
+        <div class="form-group">
+          <label for="password">Date de parution</label>
+          <input
+            type="date"
+            name="date"
+            id="date"
+            class="form-control"
+            value="<%= typeof date != 'undefined' ? date : '' %>"
+          />
+        </div>
+        <div class="form-group">
+          <label for="password">Langue</label>
+          <input
+            type="text"
+            name="langue"
+            id="langue"
+            class="form-control"
+            value="<%= typeof langue != 'undefined' ? langue : '' %>"
+            placeholder="Entez une langue suivant ce format Francais/French"
+          />
+        </div>
+        <div class="form-group">
+          <label for="password">Prix</label>
+          <input
+            type="text"
+            name="prix"
+            id="prix"
+            class="form-control"
+            value="<%= typeof prix != 'undefined' ? prix : '' %>"
+            placeholder="Entez un prix de vente"
+          />
+        </div>
+        <div class="form-group">
+          <label for="password">Genre du livre</label>
+          <input
+            type="text"
+            name="genre"
+            id="genre"
+            class="form-control"
+            value="<%= typeof genre != 'undefined' ? genre : '' %>"
+            placeholder="Entez le genre du livre"
+          />
+        </div>
+        <div class="form-group">
+          <label for="password">Résumé</label>
+          <input
+            type="text"
+            name="résumé"
+            id="résumé"
+            class="form-control"
+            value="<%= typeof résumé != 'undefined' ? résumé : '' %>"
+            placeholder="Entez le résumé du livre"
+          />
+        </div>
+        <div class="form-group">
+          <label for="password">URL de l'image</label>
+          <input
+            type="text"
+            name="url_image"
+            id="url_image"
+            class="form-control"
+            value="<%= typeof url_image != 'undefined' ? url_image : '' %>"
+            placeholder="Entez l'URL de l'image du livre"
+          />
+        </div>
+        <button
+          type="submit"
+          class="btn btn-primary btn-block"
+          style="margin-top: 10px"
+        >
+          Enregistrer le livre
+        </button>
+        <a
+          style="margin-top: 20px; margin-left: 15px"
+          class="btn btn-primary btn-block mb-2"
+          href="/livres/"
+          >Annuler</a
+        >
+      </form>
+    </div>
+  </div>
+</div>

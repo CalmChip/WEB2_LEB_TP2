@@ -1,0 +1,122 @@
+<div class="row mt-5">
+  <div class="col-md-6 m-auto">
+    <div class="card card-body">
+      <h1 class="text-center mb-3">
+        <%- include('./partiels/iconPartiel.ejs') %> Modifier le livre <%=
+        livre.titre%>
+      </h1>
+      <p><%- include('./partiels/messages.ejs') %></p>
+      <img
+        src="<%= livre.url_image %>"
+        alt="imageDuLivre"
+        class="imageLivreDansEdit"
+      />
+      <form action="/livres/modify/<%= livre.id %>" method="POST">
+        <div class="form-group">
+          <label for="nom">Titre</label>
+          <input
+            type="text"
+            name="titre"
+            id="titre"
+            class="form-control"
+            value="<%= typeof livre.titre != 'undefined' ? livre.titre : '' %>"
+            placeholder="test"
+          />
+        </div>
+        <div class="form-group">
+          <label for="nom">Auteur</label>
+          <input
+            type="text"
+            name="auteur"
+            id="auteur"
+            class="form-control"
+            value="<%= typeof livre.auteur != 'undefined' ? livre.auteur : '' %>"
+            placeholder="test"
+          />
+        </div>
+        <div class="form-group">
+          <label for="nom">Résumé</label>
+          <input
+            type="text"
+            name="résumé"
+            id="résumé"
+            class="form-control"
+            value="<%= typeof livre.résumé != 'undefined' ? livre.résumé : '' %>"
+            placeholder="test"
+          />
+        </div>
+        <div class="form-group">
+          <label for="nom">Langue</label>
+          <input
+            type="text"
+            name="langue"
+            id="langue"
+            class="form-control"
+            value="<%= typeof livre.langue != 'undefined' ? livre.langue : '' %>"
+            placeholder="test"
+          />
+        </div>
+        <div class="form-group">
+          <label for="nom">Prix</label>
+          <input
+            type="number"
+            name="prix"
+            id="prix"
+            class="form-control"
+            value="<%= typeof livre.prix != 'undefined' ? livre.prix : '' %>"
+            placeholder="test"
+          />
+        </div>
+        <div class="form-group">
+          <label for="nom">Genre</label>
+          <input
+            type="text"
+            name="genre"
+            id="genre"
+            class="form-control"
+            value="<%= typeof livre.genre != 'undefined' ? livre.genre : '' %>"
+            placeholder="test"
+          />
+        </div>
+        <div class="form-group">
+          <label for="nom">Date de parution</label>
+          <input
+            type="date"
+            name="date"
+            id="date"
+            class="form-control"
+            value="<%= typeof livre.date != 'undefined' ? livre.date : '' %>"
+          />
+        </div>
+        <div class="form-group">
+          <label for="nom">URL de l'image</label>
+          <input
+            type="text"
+            name="url_image"
+            id="url_image"
+            class="form-control"
+            value="<%= typeof livre.url_image != 'undefined' ? livre.url_image : '' %>"
+            placeholder="test"
+          />
+        </div>
+        <!--         <div>
+          <label for="file">Televerser une image du livre</label>
+          <input type="file" name="file" id="file" required />
+        </div> -->
+        <button
+          type="submit"
+          class="btn btn-primary btn-block"
+          style="margin-top: 1px"
+        >
+          Modifier le compte
+        </button>
+        <a
+          style="margin-top: 10px"
+          class="btn btn-primary btn-block mb-2"
+          href="/livres/"
+          >Annuler</a
+        >
+      </form>
+    </div>
+  </div>
+</div>

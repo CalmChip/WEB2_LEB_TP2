@@ -1,0 +1,55 @@
+<h2 class="col-md-6 m-auto" style="padding: 20px">
+  Bonjour <% if(typeof user != 'undefined') { %> <%= user.nom %> <% } %> tu est
+  connecté...
+</h2>
+<div class="col-md-8 m-auto card card-body">
+  <p class="col-md-3 m-auto listeUser">Liste des Livres</p>
+  <span class="ListSeparator">
+  <p><%- include('./partiels/messages.ejs') %></p>
+  <% if (typeof tousLivres != 'undefined') { %> <%
+  tousLivres.forEach(function(livre) { %>
+  <div class="alert alert-light alert-dismissible fade show" role="alert">
+    <div class="contenueLivres">
+      <img src="<%= livre.url_image %>" alt="imageDuLivre" class="imageLivre" />
+      <div><span>Titre:</span><%= livre.titre %></div>
+      <div><span>Auteur:</span> <%= livre.auteur %></div>
+      <div><span>Parution:</span> <%= livre.date %></div>
+      <div><span>Prix:</span> <%=livre.prix %>$</div>
+      <div><span>Langue:</span> <%= livre.langue %></div> 
+      <div><span>Genre:</span> <%= livre.genre %></div> 
+      <div class="maxWidthTest"><span>Résumé:</span> <%= livre.résumé %></div>
+    </div>
+    <a
+      class="btn btn-outline-success btn-sm mb-2"
+      href="/livres/editer/<%= livre.id %>"
+      >Modifier</a
+    >
+    -
+    <a
+      class="btn btn-outline-danger btn-sm mb-2"
+      href="/livres/supprimer/<%= livre.id %>"
+      >Supprimer</a
+    >
+  </div>
+  <% })%> <% } %>
+  <div class="buttonContainer">
+    <p>
+      <a class="btn btn-primary btn-sm" href="/livres/ajouter"
+        >Ajouter un livre</a
+      >
+    </p>
+    <p>
+      <a class="btn btn-primary btn-sm" style="min-width: 128px" href="/acceuil"
+        >Acceuil</a
+      >
+    </p>
+    <p>
+      <a
+        class="btn btn-primary btn-sm"
+        style="min-width: 128px"
+        href="/livres/logout"
+        >Deconnection</a
+      >
+    </p>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="row mt-5">
+  <div class="col-md-6 m-auto">
+    <div class="card card-body">
+      <h2>Supprimer un livres</h2>
+      <p>
+        Etes-vous sur de vouloir supprimer le livre <%= livre.titre %>, ecrit
+        par <%= livre.auteur %>?.. Cette action est irréversible
+      </p>
+      <p class="col-md-3 m-auto">
+        <a class="btn btn-danger mb-2" href="/livres/delete/<%= livre._id%>"
+          >Supprimer</a
+        >
+        <a class="btn btn-primary btn-block mb-2" href="/livres/">Annuler</a>
+      </p>
+    </div>
+  </div>
+</div>
