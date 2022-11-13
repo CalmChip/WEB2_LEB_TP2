@@ -104,11 +104,13 @@ router.post(
         erreurs.push({ msg: "Filetype not allowed" });
       }
     }
-    if (password !== oldPass) {
-      erreurs.push({ msg: "Les mots de passe ne sont pas identiques" });
-    }
-    if (password.length < 4) {
-      erreurs.push({ msg: "Le mots de passe doit etre de 4 car. minimum" });
+    if (password) {
+      if (password !== oldPass) {
+        erreurs.push({ msg: "Les mots de passe ne sont pas identiques" });
+      }
+      if (password.length < 4) {
+        erreurs.push({ msg: "Le mots de passe doit etre de 4 car. minimum" });
+      }
     }
     if (erreurs.length > 0) {
       supprimerFichier(path);
