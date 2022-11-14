@@ -13,7 +13,7 @@
       <img src="<%= livre.url_image %>" alt="imageDuLivre" class="imageLivre" />
       <div><span>Titre:</span><%= livre.titre %></div>
       <div><span>Auteur:</span> <%= livre.auteur %></div>
-      <div><span>Parution:</span> <%= livre.date %></div>
+      <div><span>Parution:</span> <%= livre.date.toLocaleString() %></div>
       <div><span>Prix:</span> <%=livre.prix %>$</div>
       <div><span>Langue:</span> <%= livre.langue %></div> 
       <div><span>Genre:</span> <%= livre.genre %></div> 
